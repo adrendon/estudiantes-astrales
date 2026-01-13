@@ -1,0 +1,211 @@
+:root {
+    --gold-light: #fdf6e3;
+    --gold-accent: #c5a059;
+    --gold-deep: #96702d;
+    --spiritual-blue: #1e293b;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.material-symbols-outlined {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    vertical-align: middle;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.astro-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table th,
+table td {
+    vertical-align: middle;
+}
+
+.table-glow .astro-badge,
+.responsive-table .astro-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.25rem;
+    width: 2.25rem;
+    margin: 0 auto;
+}
+
+.table-glow .astro-symbol,
+.responsive-table .astro-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+}
+
+.mobile-badge {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.btn-action {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.9rem 1.2rem;
+    border-radius: 9999px;
+    background: #1f2937;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid #1f2937;
+}
+
+.btn-action:hover {
+    background: #111827;
+    border-color: #111827;
+}
+
+.btn-action.btn-secondary {
+    background: #ffffff;
+    color: #1f2937;
+    border-color: #e5e7eb;
+}
+
+.btn-action.btn-secondary:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.uniform-field {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.chip-field {
+    width: auto;
+    min-width: 260px;
+    max-width: 360px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 767px) {
+    .chip-field {
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.astro-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    font-family: "Noto Sans Symbols 2", "Segoe UI Symbol", "Noto Sans Symbols", "Apple Symbols", sans-serif;
+    transform: translateY(var(--astro-nudge-y, -0.12em));
+}
+
+.astro-symbol[data-astro="Luna"] { --astro-nudge-y: -0.06em; }
+.astro-symbol[data-astro="Sol"] { --astro-nudge-y: -0.08em; }
+.astro-symbol[data-astro="Mercurio"] { --astro-nudge-y: -0.12em; }
+.astro-symbol[data-astro="Venus"] { --astro-nudge-y: -0.12em; }
+.astro-symbol[data-astro="Marte"] { --astro-nudge-y: -0.12em; }
+.astro-symbol[data-astro="Jupiter"] { --astro-nudge-y: -0.12em; }
+.astro-symbol[data-astro="Júpiter"] { --astro-nudge-y: -0.12em; }
+.astro-symbol[data-astro="Saturno"] { --astro-nudge-y: -0.12em; }
+
+.header-chip {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.chip-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.15;
+}
+
+.font-serif-premium {
+    font-family: "Playfair Display", serif;
+}
+
+.spiritual-bg {
+    background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.08), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(30, 41, 59, 0.05), transparent 40%),
+                #fafaf9;
+}
+
+.dark .spiritual-bg {
+    background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.15), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(15, 23, 42, 1), transparent 40%),
+                #0f172a;
+}
+
+.table-glow {
+    box-shadow: 0 0 40px -10px rgba(197, 160, 89, 0.15);
+}
+
+.gold-border {
+    border-image: linear-gradient(to right, transparent, var(--gold-accent), transparent) 1;
+}
+
+.btn-premium {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: 0.6s;
+}
+
+.btn-premium:hover::after {
+    left: 120%;
+}
+
+.datepicker {
+    z-index: 9999 !important;
+}
+
+.datepicker-picker {
+    background-color: white;
+    font-family: inherit;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.dark .datepicker-picker {
+    background-color: #1f2937;
+    color: white;
+    border-color: #374151;
+}
+
+.datepicker-cell.selected {
+    background-color: #c5a059 !important;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "astros",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev:build\" \"npm run dev:css\" \"npm run dev:serve\"",
+    "dev:serve": "http-server dist -p 8080 -c-1 -o",
+    "dev:build": "rollup -c -w",
+    "dev:css": "tailwindcss -c tailwind.config.cjs -i ./src/tailwind.css -o ./dist/tailwind.css --watch",
+    "build:css": "tailwindcss -c tailwind.config.cjs -i ./src/tailwind.css -o ./dist/tailwind.css",
+    "build": "npm run build:css && rollup -c",
+    "deploy": "npm run build && npx surge ./dist --domain estudiantes-astrales.surge.sh",
+    "start": "http-server dist -p 8080 -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "concurrently": "^9.2.0",
+    "http-server": "^14.1.1",
+    "rollup": "^4.55.1",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-css-only": "^4.5.5",
+    "tailwindcss": "^3.4.17",
+    "vanillajs-datepicker": "^1.3.4"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.4"
+  }
+}
