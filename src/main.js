@@ -197,7 +197,7 @@ const colorNameToHex = (nameOrHex) => {
 };
 
 const getNombreArchivo = (nombre) =>
-  String(nombre || 'CARTA_ASTRAL')
+  String(nombre || 'NOMBRE')
     .split(' ')[0]
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
@@ -296,7 +296,7 @@ function generarTabla() {
     const horaInput = document.getElementById("hora-nacimiento").value;
     
     if (!nombre || !fechaDateInput || !horaInput) {
-        mostrarAlerta("Por favor, completa todos los campos para generar tu Carta Astral.");
+        mostrarAlerta("Por favor, completa todos los campos para generar tu Contenido.");
         return;
     }
 
@@ -556,7 +556,7 @@ async function guardarInformacion() {
   try {
     const exportData = getExportData();
     if (!exportData) {
-      mostrarAlerta('Primero genera tu Carta Astral.');
+      mostrarAlerta('Primero genera tu Contenido.');
       return;
     }
 
@@ -573,7 +573,7 @@ async function guardarInformacion() {
 
       doc.setTextColor(17, 24, 39);
       doc.setFontSize(18);
-      doc.text(exportData.nombre || 'Carta Astral', pageW / 2, cursorY, { align: 'center' });
+      doc.text(exportData.nombre || 'Contenido', pageW / 2, cursorY, { align: 'center' });
       cursorY += 6;
 
       doc.setFontSize(10);
@@ -684,7 +684,7 @@ async function guardarInformacion() {
 
     doc.setFontSize(18);
     doc.setTextColor(17, 24, 39);
-    doc.text(exportData.nombre || 'Carta Astral', pageW / 2, y, { align: 'center' });
+    doc.text(exportData.nombre || 'Contenido', pageW / 2, y, { align: 'center' });
     y += 5;
 
     doc.setFontSize(11);
@@ -825,7 +825,7 @@ async function guardarInformacionJPG() {
   try {
     const exportData = getExportData();
     if (!exportData) {
-      mostrarAlerta('Primero genera tu Carta Astral.');
+      mostrarAlerta('Primero genera tu Contenido.');
       return;
     }
 
@@ -979,7 +979,7 @@ async function guardarInformacionJPG() {
     ctx.fillStyle = '#111827';
     ctx.font = '700 48px Montserrat, system-ui, sans-serif';
     {
-      const title = exportData.nombre || 'Carta Astral';
+      const title = exportData.nombre || 'Contenido';
       const tw = ctx.measureText(title).width;
       ctx.fillText(title, (width - tw) / 2, 70);
     }
