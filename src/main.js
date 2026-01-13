@@ -188,14 +188,6 @@ const hexToRgb = (hex) => {
   return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
 };
 
-const colorNameToHex = (nameOrHex) => {
-  if (!nameOrHex) return '#000000';
-  const lower = String(nameOrHex).toLowerCase();
-  if (lower === 'white') return '#ffffff';
-  if (lower === 'black') return '#000000';
-  return String(nameOrHex);
-};
-
 const getNombreArchivo = (nombre) =>
   String(nombre || 'NOMBRE')
     .split(' ')[0]
@@ -278,16 +270,6 @@ function formatoAMPM(hora, minutos) {
 function obtenerNombreDia(indice) {
     return ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"][indice];
 }
-
-const getCurrentDateTimeString = () => {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    return `${year}-${month}-${day}T${hours}:${minutes}`;
-};
 
 
 function generarTabla() {
